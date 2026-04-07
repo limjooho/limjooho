@@ -8,24 +8,25 @@ int main() {
 	int answer = 0;
 
 	while (n > 0) {
-		if (n == 7 || n == 4) {
+		if (n == 7 || n == 4) {          //정확하게 만들 수 없는 경우가 7 or 4 이기 때문에 7, 4를 제외
 			answer = -1;
 			break;
 		}
-		if (n % 5 == 0) {
+		if (n % 5 == 0) {               // 15,20 같이 5로 나누어 떨어지면 몫 출력 후 break
 			answer = n / 5;
 			break;
 		}
-		n = n - 3;
-		answer++;
+		n = n - 3;                     // 18kg인 경우, 먼저 3kg 을 빼고 
+		answer++;                      // 뺀 3kg 1개를 answer++
 
-		if (n % 5 == 0) {
+		if (n % 5 == 0) {             //18kg 에서 3kg를 뺐을 때 5로 나누어 떨어지기에, answer에 5로 나눈 몫을 더하고 break;
 			answer += n / 5;
 			break;
 		}
 	}
 	printf("%d", answer);
 }
+
 
 
 
