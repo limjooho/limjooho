@@ -5,7 +5,7 @@
 int fmax(int person[], int size) {        //최댓값의 index 를 찾는 함수
 	int max = 1;
 	for (int i = 1; i < size; i++) {
-		if (person[i] > person[max]) {
+		if (person[i] >= person[max]) {
 			max = i;
 		}
 	}
@@ -25,7 +25,11 @@ int main() {
 	for (int i = 0; i < N; i++) {
 		scanf("%d", &person[i]);
 	}
-	
+	if (N == 1) {
+		printf("0");
+		return 0;
+	}
+
 	int answer = 0;
 	while (1) {
 		int index = fmax(person, N);          //index에 최댓값이 몇번째에 있는지를 저장
