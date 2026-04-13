@@ -7,7 +7,7 @@ typedef struct {
 	long long t;    //당근의 영양제
 } carrot;
 
-carrot list[200005];
+//carrot list[200005];
 
 int compare(const void* a, const void* b) {  //타입을 고정하지 않은 void 를 사용해야 오류가 나지 않음
 	carrot* c1 = (carrot*)a;
@@ -25,6 +25,8 @@ int main() {
 
 	scanf("%lld %lld", &N, &T);
 
+	carrot* list = (carrot*)malloc(sizeof(carrot) * N);  //동적배열을 통해 선언
+
 	for (int i = 0; i < N; i++) {
 		scanf("%lld %lld", &list[i].n, &list[i].t);      
 	}
@@ -41,7 +43,7 @@ int main() {
 		}
 	}*/
 
-	long long ca = N-1;
+	long long ca = N - 1;
 	long long sum = 0;
 	for (int i = T; i > 0; i--) {
 		if (ca < 0) break;
@@ -49,4 +51,5 @@ int main() {
 		ca--;
 	}
 	printf("%lld", sum);
+	free(list);   //동적배열 반환
 }
