@@ -26,7 +26,7 @@ int main() {
 		scanf("%d", &person[i]);
 	}
 	if (N == 1) {
-		printf("0");
+		printf("0");         //N이 1인경우 0출력 후 종료
 		return 0;
 	}
 
