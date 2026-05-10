@@ -16,7 +16,7 @@ char* solution(const char* cards1[], size_t cards1_len, const char* cards2[], si
     for (int i=0; i<goal_len; i++) {
         if(i1 < cards1_len && strcmp(cards1[i1], goal[i]) == 0)
             i1++;
-        else if ( i2 < cards2_len && strcmp(cards2[i2], goal[i]) == 0)
+        else if (i2 < cards2_len && strcmp(cards2[i2], goal[i]) == 0)
             i2++;
         else break;
     }
